@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CraftHive</title>
+    <!-- React and ReactDOM CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Theme configuration
+        const theme = {
+            colors: {
+                primary: '#5B3E8C',    // Deep violet
+                secondary: '#FFB845',  // Warm orange
+                background: '#F8F5FF', // Light violet
+                text: '#2D2D2D',      // Dark gray
+                white: '#FFFFFF'
+            }
+        };
+
+        // Navbar Component
+        const Navbar = () => (
+            <nav style={{backgroundColor: theme.colors.primary}} className="w-full p-4 text-white flex justify-between items-center">
+                <div className="flex items-center gap-4">
+                    <div className="cursor-pointer">☰</div>
+                    <div className="text-xl font-bold">CraftHive</div>
+                </div>
+                <div className="flex items-center gap-4">
+                    <div className="cursor-pointer">🔍</div>
+                    <div className="cursor-pointer">❓</div>
+                </div>
+            </nav>
+        );
+
+        // Home Page Component
+        const HomePage = () => (
+            <div style={{backgroundColor: theme.colors.background}} className="p-6 min-h-screen">
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-3xl font-bold mb-6">Welcome to CraftHive!</h1>
+                    <h2 className="text-2xl mb-8">What can I do for you?</h2>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div style={{backgroundColor: theme.colors.secondary}} 
+                             className="p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                            <div className="text-2xl mb-4">✨</div>
+                            <h3 className="font-semibold mb-2">Suggest product pricing</h3>
+                            <p className="text-sm">Get smart pricing recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+
+        // Main App Component
+        const App = () => {
+            return (
+                <div style={{backgroundColor: theme.colors.background}} className="min-h-screen">
+                    <Navbar />
+                    <HomePage />
+                </div>
+            );
+        };
+
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
