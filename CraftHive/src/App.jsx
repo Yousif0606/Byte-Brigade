@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 const App = () => {
   return (
     <div className="content">
-      <h1>This is the start</h1>
+      <h1>Wishing I could download all the knowledge to my brain</h1>
       <p>Start building amazing things with Rsbuild.</p>
     </div>
   );
