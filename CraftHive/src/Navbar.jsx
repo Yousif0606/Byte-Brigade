@@ -1,18 +1,19 @@
 import React from "react";
+import "./App.css";
 
-const Navbar = () => {
-    return (
-        <nav style={{backgroundColor: theme.colors.primary}} className="w-full p-4 text-white flex justify-between items-center">
-            <div className="flex items-center gap-4">
-                <div className="cursor-pointer">☰</div>
-                <div className="text-xl font-bold">CraftHive</div>
-            </div>
-            <div className="flex items-center gap-4">
-                <div className="cursor-pointer">🔍</div>
-                <div className="cursor-pointer">❓</div>
-            </div>
-        </nav>
-    );
-};
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <div>
+        <div className="cursor-pointer">☰</div>
+        <div className="text-xl font-bold">CraftHive</div>
+      </div>
+      <div>
+        <div className="cursor-pointer">🔍</div>
+        <div className="cursor-pointer">❓</div>
+      </div>
+    </nav>
+  );
+}
 
-  export default Navbar;
+export default Navbar;

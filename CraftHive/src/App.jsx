@@ -1,33 +1,108 @@
-import './App.css';
-import Navbar from './Navbar';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import "./App.css";
 
-// This is original App component ~ Ryleigh
-const App = () => {
+// 🟢 Page 1: Material Input
+const MaterialInputPage = () => {
+  const [materials, setMaterials] = useState([{ name: "", quantity: 1, cost: "" }]);
+  const navigate = useNavigate();
+
+  const addMaterial = () => setMaterials([...materials, { name: "", quantity: 1, cost: "" }]);
+
+  const handleChange = (index, event) => {
+    const { name, value } = event.target;
+    const newMaterials = [...materials];
+    newMaterials[index][name] = value;
+    setMaterials(newMaterials);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("materials", JSON.stringify(materials));
+    navigate("/loading");
+  };
+
   return (
-    <div className="content">
-      <h1>Welcome to CraftHive!</h1>
-      <p>Created by ByteBrigade with rsbuild.</p>
-      <div class="inline-block group p-6 border-2 cursor-pointer hover:bg-gray-50 hover:border-blue-100">
-        <button type='button' className='class="shadow h-16 w-13 m-4 bg-teal-400 inline-flex"'>Click this button here</button> 
-      </div>
-      <br></br>
-      <div>
-        <h1 class="text-3xl font-bold underline">Hello world!</h1>
-      </div>
+    <div className="container">
+      <h2>Enter Materials & Costs</h2>
+      <form onSubmit={handleSubmit}>
+        {materials.map((material, index) => (
+          <div key={index} className="material-row">
+            <input type="text" name="name" placeholder="Material Name" value={material.name} onChange={(e) => handleChange(index, e)} required />
+            <input type="number" name="quantity" placeholder="Quantity" value={material.quantity} onChange={(e) => handleChange(index, e)} required />
+            <input type="number" name="cost" placeholder="Cost per Unit ($)" value={material.cost} onChange={(e) => handleChange(index, e)} required />
+          </div>
+        ))}
+        <button type="button" onClick={addMaterial}>+ Add Another</button>
+        <button type="submit">Next</button>
+      </form>
     </div>
   );
 };
 
+// 🔵 Page 2: Loading
+const LoadingPage = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    setTimeout(() => {
+      navigate("/pricing");
+    }, 2000);
+  }, [navigate]);
 
-// This is the modified App component based on 
-// https://medium.com/@mechiranthan.y/a-step-by-step-guide-to-building-your-first-web-app-with-react-js-ad7bd6fe6e1b
-//  ~ Ryleigh 
-/*const App = () => {
   return (
-    <div className="App">
-      <Navbar />
+    <div className="container">
+      <h2>Calculating Price...</h2>
+      <div className="spinner"></div>
     </div>
   );
-}*/
+};
+
+// 🔴 Page 3: Pricing Page
+const PricingPage = () => {
+  const [materials, setMaterials] = useState([]);
+  const [laborHours, setLaborHours] = useState(0);
+  const [skillLevel, setSkillLevel] = useState("Beginner");
+
+  const skillRates = { Beginner: 15, Intermediate: 40, Expert: 100 };
+
+  useEffect(() => {
+    const storedMaterials = JSON.parse(localStorage.getItem("materials"));
+    if (storedMaterials) setMaterials(storedMaterials);
+  }, []);
+
+  const materialCost = materials.reduce((acc, item) => acc + item.quantity * parseFloat(item.cost || 0), 0);
+  const totalPrice = materialCost + laborHours * skillRates[skillLevel];
+
+  return (
+    <div className="container">
+      <h2>Suggested Price</h2>
+      <p><strong>Total Material Cost:</strong> ${materialCost.toFixed(2)}</p>
+      <label>Skill Level:</label>
+      <select value={skillLevel} onChange={(e) => setSkillLevel(e.target.value)}>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Expert</option>
+      </select>
+      <label>Labor Hours: {laborHours} hours</label>
+      <input type="range" min="0" max="20" value={laborHours} onChange={(e) => setLaborHours(e.target.value)} />
+      <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+    </div>
+  );
+};
+
+// 🌍 Main App
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MaterialInputPage />} />
+        <Route path="/loading" element={<LoadingPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
