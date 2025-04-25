@@ -17,11 +17,13 @@ body {
 }
 
 .content h1 {
+  color: #593e8b;
   font-size: 3.6rem;
   font-weight: 700;
 }
 
 .content p {
+  color: #5d4777;
   font-size: 1.2rem;
   font-weight: 400;
   opacity: 0.5;
