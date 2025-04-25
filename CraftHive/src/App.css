@@ -2,6 +2,31 @@
 @plugin 'flowbite-react/plugin/tailwindcss';
 @source '../.flowbite-react/class-list.json';
 
+:root {
+  --primary_purple_main: #5D4777;
+  --primary_purple_dark: #593E8B;
+  --primary_purple_light: #A193BC;
+  --primary_purple_lighter: #F0EBFA;
+
+  --secondary_gold_main: #FFB343;
+  --secondary_gold_dark: #F9A321;
+  --secondary_gold_light: #FFBD59;
+  --secondary_gold_lighter: #FFE8C6;
+
+  --tertiary_teal_dark: #5DC5BB;
+  --tertiary_teal_light: #5DC5BB;
+  --tertiary_coral_dark: #FF7A6D;
+  --tertiary_coral_light: #FFDBD7;
+
+  --ui_dark_grey: #333333;
+  --ui_medium_grey: #666666;
+  --ui_light_grey: #E0E0E0;
+  --ui_off_white: #F8F8F8;
+  --ui_success: #4CAF50;
+  --ui_alert: #F44336;
+  --ui_info: #2196F3;
+}
+
 body {
   margin: 0;
   color: #593e8b;
@@ -29,4 +54,8 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   opacity: 0.5;
+}
+
+top-navbar {
+  background-color: var(--primary_purple_main);
 }
