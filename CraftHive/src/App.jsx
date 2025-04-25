@@ -10,7 +10,7 @@ import { PricingGetStarted } from './components/PricingGetStarted';
 // This is original App component ~ Ryleigh
 const App = () => {
   return <>
-    <main className="flex flex-col justify-center items-center mx-auto w-full max-w-none h-screen bg-violet-50 max-md:max-w-[991px] max-sm:max-w-screen-sm">
+    <main>
       <Header />
 
       <Routes>
