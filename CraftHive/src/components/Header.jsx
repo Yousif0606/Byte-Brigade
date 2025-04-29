@@ -1,5 +1,6 @@
 import React from "react";
 import {CircleHelp, Menu} from 'lucide-react';
+import Logo from '../assets/logotype_white.svg';
 import '../App.css';
 
 export default function Header() {
