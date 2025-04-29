@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import RequirementsList from "./RequirementsList";
-import NavigationButtons from "./NavigationButtons";
+import RequirementsList from "../components/RequirementsList";
+import NavigationButtons from "../components/NavigationButtons";
 
 const PricingGetStarted = () => {
   return (

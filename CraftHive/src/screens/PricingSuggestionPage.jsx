@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import RequirementsList from "./RequirementsList";
-import NavigationButtons from "./NavigationButtons";
+import RequirementsList from "../components/RequirementsList";
+import NavigationButtons from "../components/NavigationButtons";
 
 /* Below is an example of calling a function from a JS helper file, and passing an argument to it from this file -Nate
 const renatoSayHi = () => alert('hi renato');*/

@@ -1,10 +1,10 @@
 import './App.css';
 import Header from "./components/Header";
-import {PricingSuggestionPage, renatoSayHi} from './components/PricingSuggestionPage'
-import { useEffect } from 'react';
-import Router from 'react-router-dom';
+import {React, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
-import { PricingGetStarted } from './components/PricingGetStarted';
+import { Homepage } from './screens/Homepage';
+import {PricingSuggestionPage} from './screens/PricingSuggestionPage'
+import { PricingGetStarted } from './screens/PricingGetStarted';
 
 // This is original App component ~ Ryleigh
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
       <Header />
 
       <Routes>
-        <Route path="/" element={<PricingSuggestionPage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/pricing/landing" element={<PricingSuggestionPage />} />
         <Route path="/pricing/material-input" element={<PricingGetStarted />} />
       </Routes>
