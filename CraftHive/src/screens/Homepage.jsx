@@ -15,7 +15,7 @@ const Homepage = () => {
         <h1 className="header-text  my-4 text-7xl font-semibold text-black max-md:text-8xl max-sm:text-7xl">
           What can I do for you?
         </h1>
-        
+
         <div>
           <HomepageButtons />
         </div>
