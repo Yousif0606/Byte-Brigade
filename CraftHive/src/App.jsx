@@ -1,4 +1,3 @@
-import { renatoSayHi } from '../helpers/renato';
 import './App.css';
 import Header from "./components/Header";
 import {PricingSuggestionPage, renatoSayHi} from './components/PricingSuggestionPage'
@@ -11,13 +10,20 @@ import { PricingGetStarted } from './components/PricingGetStarted';
 const App = () => {
   return <>
     <main>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.cdnfonts.com/css/open-sauce-one" rel="stylesheet"></link>
+                
       <Header />
 
       <Routes>
         <Route path="/" element={<PricingSuggestionPage />} />
-        <Route path="/pricing/landing" element={<PricingGetStarted />} />
+        <Route path="/pricing/landing" element={<PricingSuggestionPage />} />
+        <Route path="/pricing/material-input" element={<PricingGetStarted />} />
       </Routes>
 
+      {/*<Footer />*/}
     </main>
   </>  
 };
