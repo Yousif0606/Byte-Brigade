@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import {React, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Homepage } from './screens/Homepage';
-import {PricingSuggestionPage} from './screens/PricingSuggestionPage'
+import {PricingMaterialInput} from './screens/PricingMaterialInput'
 import { PricingGetStarted } from './screens/PricingGetStarted';
 
 // This is original App component ~ Ryleigh
@@ -18,9 +18,9 @@ const App = () => {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/pricing/landing" element={<PricingSuggestionPage />} />
-        <Route path="/pricing/material-input" element={<PricingGetStarted />} />
+        <Route path="/" element={<PricingGetStarted />} />
+        {/*<Route path="/pricing/landing" element={<PricingGetStarted />} />*/}
+        <Route path="/pricing/materialinput" element={<PricingMaterialInput />} />
       </Routes>
 
       {/*<Footer />*/}

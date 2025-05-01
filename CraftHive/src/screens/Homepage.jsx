@@ -21,7 +21,7 @@ const Homepage = () => {
         </div>
 
         <div className="-mr-96 -mt-64">
-          <img src={Logo} alt="Company Logo" width={780} height={780} className="background-icon" />
+          <img src={Logo} alt="CraftHive Logo" width={780} height={780} className="background-icon" />
         </div>
       </main>
   );
