@@ -6,7 +6,7 @@ import '../App.css';
 
 export default function Header() {
   return (
-    <header className="flex justify-between p-5 rounded-bl-3xl rounded-br-3xl w-full top-navbar max-sm:p-2.5">
+    <header className="flex justify-between p-5 rounded-bl-3xl rounded-br-3xl w-full top-navbar max-sm:p-2.5 sticky">
       <div className="flex justify-center ps-3 items-center max-sm:w-10 max-sm:h-10">
         <Menu color="white" size={70} />
       </div>

@@ -8,6 +8,7 @@
   --primary_purple_dark: #593E8B;
   --primary_purple_light: #A193BC;
   --primary_purple_lighter: #F0EBFA;
+  --primary_purple_dark_background: rgba(89, 62, 139, 0.2);
 
   --secondary_gold_main: #FFB343;
   --secondary_gold_dark: #F9A321;
@@ -71,20 +72,60 @@ body {
   font-optical-sizing: auto;
 }
 
-.purple-text-dark {
+.purple-text-main {
   color: var(--primary_purple_main);
+}
+
+.purple-text-dark {
+  color: var(--primary_purple_dark);
 }
 
 .purple-text-light {
   color: var(--primary_purple_light);
 }
 
+.gold-text-main {
+  color: var(--primary_gold_main);
+}
+
 .gold-text-dark {
-  color: var(--secondary_gold_main)
+  color: var(--secondary_gold_dark)
 }
 
 .gold-text-light {
   color: var(--secondary_gold_light);
+}
+
+.purple-bg-dark {
+  background-color: var(--primary_purple_main);
+}
+
+.purple-bg-light {
+  background-color: var(--primary_purple_light);
+}
+
+.purple-bg-lighter {
+  background-color: var(--primary_purple_lighter);
+}
+
+.purple-bg-textbox {
+  background-color: var(--primary_purple_dark_background);
+}
+
+.grey-bg-dark {
+  background-color: var(--ui_dark_grey)
+}
+
+.grey-bg-medium {
+  background-color: var(--ui_medium_grey);
+}
+
+.grey-bg-light {
+  background-color: var(--ui_light_grey);
+}
+
+.offwhite-bg {
+  background-color: var(--ui_off_white);
 }
 
 .background-icon {
