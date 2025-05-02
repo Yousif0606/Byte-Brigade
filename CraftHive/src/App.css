@@ -1,12 +1,36 @@
 @import 'tailwindcss';
-@plugin 'flowbite-react/plugin/tailwindcss';
-@source '../.flowbite-react/class-list.json';
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/open-sauce-one');
+
+:root {
+  --primary_purple_main: #5D4777;
+  --primary_purple_dark: #593E8B;
+  --primary_purple_light: #A193BC;
+  --primary_purple_lighter: #F0EBFA;
+
+  --secondary_gold_main: #FFB343;
+  --secondary_gold_dark: #F9A321;
+  --secondary_gold_light: #FFBD59;
+  --secondary_gold_lighter: #FFE8C6;
+
+  --tertiary_teal_dark: #5DC5BB;
+  --tertiary_teal_light: #5DC5BB;
+  --tertiary_coral_dark: #FF7A6D;
+  --tertiary_coral_light: #FFDBD7;
+
+  --ui_dark_grey: #333333;
+  --ui_medium_grey: #666666;
+  --ui_light_grey: #E0E0E0;
+  --ui_off_white: #F8F8F8;
+  --ui_success: #4CAF50;
+  --ui_alert: #F44336;
+  --ui_info: #2196F3;
+}
 
 body {
   margin: 0;
-  color: #593e8b;
-  font-family: Quicksand, OpenSauce, sans-serif;
-  background-image: linear-gradient(to bottom, #ffbd59, #ffe8c6 );
+  color: #ffbe32;
 }
 
 .content {
@@ -19,14 +43,52 @@ body {
 }
 
 .content h1 {
-  color: #593e8b;
   font-size: 3.6rem;
   font-weight: 700;
 }
 
 .content p {
-  color: #5d4777;
   font-size: 1.2rem;
   font-weight: 400;
   opacity: 0.5;
+}
+
+.top-navbar {
+  background-color: var(--primary_purple_main);
+}
+
+.button-colour {
+  background-color: var(--secondary_gold_main);
+}
+
+.header-text {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.body-text {
+  font-family: 'Open Sauce One', Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.purple-text-dark {
+  color: var(--primary_purple_main);
+}
+
+.purple-text-light {
+  color: var(--primary_purple_light);
+}
+
+.gold-text-dark {
+  color: var(--secondary_gold_main)
+}
+
+.gold-text-light {
+  color: var(--secondary_gold_light);
+}
+
+.background-icon {
+  opacity: 15%;
+  position:fixed;
+  z-index: 1;
 }
