@@ -1,0 +1,135 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/open-sauce-one');
+
+:root {
+  --primary_purple_main: #5D4777;
+  --primary_purple_dark: #593E8B;
+  --primary_purple_light: #A193BC;
+  --primary_purple_lighter: #F0EBFA;
+  --primary_purple_dark_background: rgba(89, 62, 139, 0.2);
+
+  --secondary_gold_main: #FFB343;
+  --secondary_gold_dark: #F9A321;
+  --secondary_gold_light: #FFBD59;
+  --secondary_gold_lighter: #FFE8C6;
+
+  --tertiary_teal_dark: #5DC5BB;
+  --tertiary_teal_light: #5DC5BB;
+  --tertiary_coral_dark: #FF7A6D;
+  --tertiary_coral_light: #FFDBD7;
+
+  --ui_dark_grey: #333333;
+  --ui_medium_grey: #666666;
+  --ui_light_grey: #E0E0E0;
+  --ui_off_white: #F8F8F8;
+  --ui_success: #4CAF50;
+  --ui_alert: #F44336;
+  --ui_info: #2196F3;
+}
+
+body {
+  margin: 0;
+  color: #ffbe32;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.1;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.top-navbar {
+  background-color: var(--primary_purple_main);
+}
+
+.button-colour {
+  background-color: var(--secondary_gold_main);
+}
+
+.header-text {
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.body-text {
+  font-family: 'Open Sauce One', Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+
+.purple-text-main {
+  color: var(--primary_purple_main);
+}
+
+.purple-text-dark {
+  color: var(--primary_purple_dark);
+}
+
+.purple-text-light {
+  color: var(--primary_purple_light);
+}
+
+.gold-text-main {
+  color: var(--primary_gold_main);
+}
+
+.gold-text-dark {
+  color: var(--secondary_gold_dark)
+}
+
+.gold-text-light {
+  color: var(--secondary_gold_light);
+}
+
+.purple-bg-dark {
+  background-color: var(--primary_purple_main);
+}
+
+.purple-bg-light {
+  background-color: var(--primary_purple_light);
+}
+
+.purple-bg-lighter {
+  background-color: var(--primary_purple_lighter);
+}
+
+.purple-bg-textbox {
+  background-color: var(--primary_purple_dark_background);
+}
+
+.grey-bg-dark {
+  background-color: var(--ui_dark_grey)
+}
+
+.grey-bg-medium {
+  background-color: var(--ui_medium_grey);
+}
+
+.grey-bg-light {
+  background-color: var(--ui_light_grey);
+}
+
+.offwhite-bg {
+  background-color: var(--ui_off_white);
+}
+
+.background-icon {
+  opacity: 15%;
+  position:fixed;
+  z-index: 1;
+}
