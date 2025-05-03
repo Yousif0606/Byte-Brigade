@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import MaterialsDescription from "../components/MaterialsDescription";
+import MaterialsDescriptionForm from "../components/MaterialsDescriptionForm";
 import NavigationButtons from "../components/NavigationButtons";
 
 /* Below is an example of calling a function from a JS helper file, and passing an argument to it from this file -Nate
@@ -17,9 +17,9 @@ const PricingMaterialInput = () => {
     </div>
 
     <div className="flex-grow flex flex-col">
-      <MaterialsDescription />
+      <MaterialsDescriptionForm />
       <div className="mt-auto w-full">
-        <NavigationButtons nextRoute="/pricing/materialinput" />
+        <NavigationButtons nextRoute="/pricing/materialamount" />
       {/*Put in tag above for toggleable visibility}*/}
       {/*showBackButton={false}*/}
       </div>
