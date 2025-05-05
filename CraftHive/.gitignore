@@ -6,8 +6,10 @@
 # Dist
 node_modules
 dist/
+.flowbite-react
 
 # IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
+.vscode

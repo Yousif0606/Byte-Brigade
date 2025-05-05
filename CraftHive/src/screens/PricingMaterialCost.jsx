@@ -6,7 +6,7 @@ import NavigationButtons from "../components/NavigationButtons";
 /* Below is an example of calling a function from a JS helper file, and passing an argument to it from this file -Nate
 const renatoSayHi = () => alert('hi renato');*/
 
-const PricingMaterialInput = () => {
+const PricingMaterialCost = () => {
   return (
     <section className="flex flex-col w-full">
     {/*<Logo className="background-icon" />*/}
@@ -29,4 +29,4 @@ const PricingMaterialInput = () => {
 }
 
 //We need to include the lines below to export the React component if we declare it as a const function above -Nate
-export {PricingMaterialInput};
+export {PricingMaterialCost};

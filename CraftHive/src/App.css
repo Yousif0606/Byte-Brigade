@@ -1,6 +1,4 @@
 @import 'tailwindcss';
-@plugin 'flowbite-react/plugin/tailwindcss';
-@source '../../.flowbite-react/class-list.json';
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/open-sauce-one');
@@ -33,7 +31,7 @@
 
 body {
   margin: 0;
-  color: #ffbe32;
+  color: var(--ui_dark_grey);
 }
 
 .content {
