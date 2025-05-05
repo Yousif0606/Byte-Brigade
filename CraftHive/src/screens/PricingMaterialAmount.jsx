@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import MaterialsDescriptionForm from "../components/MaterialsDescriptionForm";
+import MaterialsAmountForm from "../components/MaterialsAmountForm";
 import NavigationButtons from "../components/NavigationButtons";
 
 const PricingMaterialAmount = () => {
@@ -14,7 +14,7 @@ const PricingMaterialAmount = () => {
     </div>
 
     <div className="flex-grow flex flex-col">
-      <MaterialsDescriptionForm />
+      <MaterialsAmountForm />
       <div className="mt-auto w-full">
         <NavigationButtons nextRoute="/pricing/materialamount" />
       {/*Put in tag above for toggleable visibility}*/}
