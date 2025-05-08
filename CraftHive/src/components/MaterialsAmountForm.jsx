@@ -1,8 +1,6 @@
 import React from "react";
 import { MaterialInputPage } from "../helpers/PriceSuggestion.js";
 import {
-  Button,
-  Label,
   Select,
   Textarea,
   TextInput,
@@ -29,10 +27,8 @@ export default function MaterialsAmountForm() {
               <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-3 ">
                 {/* Material entries will go here */}
                 <div className="col-span-2 ml-9 h-12 offwhite-bg align-middle rounded-lg">
-                  <TextInput 
-                    id="material-1" 
-                    type="text" 
-                    placeholder="Material description..." 
+                  <Select 
+                    id="material-amount-1" 
                     className="rounded-lg offwhite-bg border-none focus:ring-purple-400 align-middle px-3 py-4" 
                   />
                 </div>
