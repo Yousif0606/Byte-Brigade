@@ -1,4 +1,3 @@
-// ✅ App.jsx (single file including Pricing + Inventory + Product Flow)
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -108,12 +107,19 @@ function PriceBreakdown({ data }) {
 }
 
 function Inventory() {
-  const [inventory, setInventory] = useState([]);
+  const [inventory, setInventory] = useState(() => {
+    const saved = localStorage.getItem("inventory");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [item, setItem] = useState({ name: "", quantity: "", cost: "" });
   const handleChange = (e) => setItem({ ...item, [e.target.name]: e.target.value });
+
   const addItem = () => {
     if (!item.name) return;
-    setInventory([...inventory, item]);
+    const updated = [...inventory, item];
+    setInventory(updated);
+    localStorage.setItem("inventory", JSON.stringify(updated));
     setItem({ name: "", quantity: "", cost: "" });
   };
 
