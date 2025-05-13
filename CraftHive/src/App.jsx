@@ -19,7 +19,7 @@ function HomeScreen() {
     </div>
   );
 }
-
+// Product entry function
 function PricingStart() {
   const navigate = useNavigate();
   const [isNew, setIsNew] = useState(true);
@@ -31,7 +31,7 @@ function PricingStart() {
     </div>
   );
 }
-
+// material cost within product entry 
 function ProductCreate({ data, setData }) {
   const navigate = useNavigate();
   const addMaterial = () => setData({ ...data, materials: [...data.materials, { name: "", cost: "" }] });
@@ -62,7 +62,7 @@ function ProductCreate({ data, setData }) {
     </div>
   );
 }
-
+// If not needed a new product then this would show as a originally saved product
 function ProductSelect() {
   const navigate = useNavigate();
   return (
@@ -73,7 +73,7 @@ function ProductSelect() {
     </div>
   );
 }
-
+// price suggestion calculation
 function PricingResult({ data }) {
   const navigate = useNavigate();
   const matCost = data.materials.reduce((acc, m) => acc + parseFloat(m.cost || 0), 0);
@@ -89,7 +89,7 @@ function PricingResult({ data }) {
     </div>
   );
 }
-
+// show the price suggestion
 function PriceBreakdown({ data }) {
   const matCost = data.materials.reduce((acc, m) => acc + parseFloat(m.cost || 0), 0);
   const labor = (parseFloat(data.creativeHours || 0) + parseFloat(data.adminHours || 0)) * parseFloat(data.hourlyRate || 0);
@@ -105,7 +105,7 @@ function PriceBreakdown({ data }) {
     </div>
   );
 }
-
+// saving material in inventory 
 function Inventory() {
   const [inventory, setInventory] = useState(() => {
     const saved = localStorage.getItem("inventory");
@@ -139,7 +139,7 @@ function Inventory() {
     </div>
   );
 }
-
+// product pricing 
 function App() {
   const [data, setData] = useState({
     name: "",
