@@ -6,6 +6,7 @@ import { Homepage } from './screens/Homepage';
 import {PricingMaterialCost} from './screens/PricingMaterialCost';
 import {PricingMaterialAmount} from './screens/PricingMaterialAmount';
 import { PricingGetStarted } from './screens/PricingGetStarted';
+import { ProductEntry } from './screens/ProductEntry';
 
 // This is original App component ~ Ryleigh
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<PricingGetStarted />} />
+        <Route path="/pricing/product_entry" element={<ProductEntry />} />
         <Route path="/pricing/landing" element={<PricingGetStarted />} />
         <Route path="/pricing/material_cost_input" element={<PricingMaterialCost />} />
         <Route path="/pricing/material_amount_input" element={<PricingMaterialAmount />} />
