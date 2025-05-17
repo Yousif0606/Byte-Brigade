@@ -3,10 +3,11 @@ import Header from "./components/Header";
 import {React, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Homepage } from './screens/Homepage';
-import {PricingMaterialCost} from './screens/PricingMaterialCost';
-import {PricingMaterialAmount} from './screens/PricingMaterialAmount';
+import { PricingMaterialCost } from './screens/PricingMaterialCost';
+import { IsNewProduct } from './screens/IsNewProduct';
 import { PricingGetStarted } from './screens/PricingGetStarted';
 import { ProductEntry } from './screens/ProductEntry';
+import { ExistingProductList } from './screens/ExistingProductList';
 
 // This is original App component ~ Ryleigh
 const App = () => {
@@ -21,10 +22,12 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<PricingGetStarted />} />
-        <Route path="/pricing/product_entry" element={<ProductEntry />} />
         <Route path="/pricing/landing" element={<PricingGetStarted />} />
-        <Route path="/pricing/material_cost_input" element={<PricingMaterialCost />} />
-        <Route path="/pricing/material_amount_input" element={<PricingMaterialAmount />} />
+        <Route path='/pricing/new_product' element={<IsNewProduct />} />
+        <Route path="/pricing/existing_product" element={<ExistingProductList />} />
+        <Route path="/pricing/product_entry" element={<ProductEntry />} />
+        <Route path="/pricing/material_input" element={<PricingMaterialCost />} />
+        
       </Routes>
 
       {/*<Footer />*/}

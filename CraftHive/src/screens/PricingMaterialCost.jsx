@@ -19,7 +19,7 @@ const PricingMaterialCost = () => {
     <div className="flex-grow flex flex-col">
       <MaterialsDescriptionForm />
       <div className="mt-auto w-full">
-        <NavigationButtons nextRoute="/pricing/material_amount_input" />
+        <NavigationButtons nextRoute="/pricing/suggested_price" />
       {/*Put in tag above for toggleable visibility}*/}
       {/*showBackButton={false}*/}
       </div>

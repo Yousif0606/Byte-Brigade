@@ -26,7 +26,7 @@ const PricingGetStarted = () => {
       <div className="flex-grow flex flex-col">
         <RequirementsList />
         <div className="mt-auto w-full">
-          <NavigationButtons nextRoute="/pricing/product_entry" />
+          <NavigationButtons nextRoute="/pricing/new_product" />
         {/*Put in tag above for toggleable visibility}*/}
         {/*showBackButton={false}*/}
         </div>
