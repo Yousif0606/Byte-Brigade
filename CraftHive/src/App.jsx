@@ -8,6 +8,7 @@ import { IsNewProduct } from './screens/IsNewProduct';
 import { PricingGetStarted } from './screens/PricingGetStarted';
 import { ProductEntry } from './screens/ProductEntry';
 import { ExistingProductList } from './screens/ExistingProductList';
+import { PricingSuggestion } from './screens/PricingSuggestion';
 
 // This is original App component ~ Ryleigh
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/pricing/existing_product" element={<ExistingProductList />} />
         <Route path="/pricing/product_entry" element={<ProductEntry />} />
         <Route path="/pricing/material_input" element={<PricingMaterialCost />} />
+        <Route path="/pricing/suggested_price" element={<PricingSuggestion />} />
         
       </Routes>
 
