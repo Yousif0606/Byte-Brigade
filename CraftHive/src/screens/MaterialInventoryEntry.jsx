@@ -33,7 +33,7 @@ const MaterialInventoryEntry = () => {
           Then input the quantity of each type of material and the cost for one purcahsed bunch of the material.
           </h5>
 
-    <div className="max-w-6xl flex-grow flex flex-col body-text pb-20">
+    <div className="max-w-6xl flex-grow flex flex-col body-text pb-8">
     <form className="flex flex-col gap-5" >
               {/* Material entry form content with four columns (one used for add button) */}
               <div className="grid grid-cols-4 md:grid-cols-4 gap-4 md:gap-3 ">
@@ -76,7 +76,7 @@ const MaterialInventoryEntry = () => {
             </form>
           </div>
 
-          <h5 className="body-text font-light px-10 pb-4 mb-8 text-xl purple-text-dark max-md:text-lg max-sm:text-base ">
+          <h5 className="body-text font-light px-10 pb-20 mb-8 text-xl purple-text-dark max-md:text-lg max-sm:text-base ">
           <span className="font-bold">Materials List</span>
           </h5>
 
@@ -89,7 +89,7 @@ const MaterialInventoryEntry = () => {
             </div>
       <div>
 
-        <NavigationButtons nextRoute="/pricing/material_input" />
+        <NavigationButtons nextRoute="/" />
 
       </div>
 
