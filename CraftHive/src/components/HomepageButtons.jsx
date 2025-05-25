@@ -1,13 +1,22 @@
 "use client";
 import React from "react";
-import {BadgeDollarSign} from 'lucide-react';
+import {BadgeDollarSign, Database} from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 function HomepageButtons() {
+  
+  //This is how to properly setup multiple routes for more than 1 button within the same component
+  let navigate = useNavigate();
+  const navigatePriceSuggest = () => navigate("/pricing/landing");
+  const navigateInventory = () => navigate("/inventory/landing");
+
+  
   return (
+
     <section className="items-center body-text">
         <div className="grid grid-cols-2 grid-rows-1 gap-12">
             <div className="col-span-1">
-                <article className="px-20 py-9 button-colour rounded-[30px] max-md:px-5 max-md:max-w-full">
+                <button onClick={ navigatePriceSuggest } className="px-20 py-9 button-colour cursor-pointer rounded-[30px] max-md:px-5 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <figure>
                         <BadgeDollarSign color="white" size={120} />
@@ -19,13 +28,13 @@ function HomepageButtons() {
                     </h2>
                     </div>
                 </div>
-                </article>
+                </button>
             </div>
             <div className="col-span-1">
-                <article className="px-20 py-9 button-colour rounded-[30px] max-md:px-5 max-md:max-w-full">
+                <button onClick={ navigateInventory }  className="px-20 py-9 button-colour cursor-pointer rounded-[30px] max-md:px-5 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <figure>
-                        <BadgeDollarSign color="white" size={120} />
+                        <Database color="white" size={120} />
                     </figure>
                     <div className="ml-5 max-md:ml-0 max-md:w-full">
                     <h2 className="self-stretch my-10 text-left text-3xl body-text font-semibold text-white max-md:mt-10">
@@ -34,7 +43,7 @@ function HomepageButtons() {
                     </h2>
                     </div>
                 </div>
-                </article>
+                </button>
             </div>
         </div>
     </section>
