@@ -14,7 +14,7 @@ const PricingMaterialCost = () => {
 
       <div className="flex-grow flex flex-col">
         <MaterialsDescriptionForm />
-        <div className="mt-auto w-full">
+        <div className="mt-auto w-full pr-3">
           <NavigationButtons nextRoute="/pricing/suggested_price" />
         </div>
       </div>

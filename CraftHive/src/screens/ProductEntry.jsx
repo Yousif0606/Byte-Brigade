@@ -41,10 +41,10 @@ const ProductEntry = () => {
           </h4>
           <h5 className="body-text font-light px-10 pb-4 mb-8 text-xl purple-text-dark">
             <span className="font-bold">Give a short title or description.</span><br />
-            Then enter time and wage details below.
+            Then input the amount of time you spend creating one instance of this product, including a fair hourly wage based on your level of expertise with the medium of this in the appropriate fields below.
           </h5>
 
-          <div className="max-w-6xl flex-grow flex flex-col body-text pb-20">
+          <div className="max-w-6xl flex-grow flex flex-col body-text pb-20 px-10">
             <form className="flex flex-col gap-5">
               <div className="grid grid-cols-3 gap-4">
                 <TextInput
@@ -74,7 +74,7 @@ const ProductEntry = () => {
                     onChange={e => handleChange("creativeHours", e.target.value)}
                   />
                   <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
-                    <small>Hours spent crafting the product.</small>
+                    <small>Creative hours that go into making one instance of the product.</small>
                   </HelperText>
                 </div>
 
@@ -87,7 +87,7 @@ const ProductEntry = () => {
                     onChange={e => handleChange("adminHours", e.target.value)}
                   />
                   <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
-                    <small>Time spent on business tasks per item.</small>
+                    <small>Weekly admin hours that go into research, distribution, and material gathering of one instance of the product.</small>
                   </HelperText>
                 </div>
 
@@ -100,7 +100,7 @@ const ProductEntry = () => {
                     onChange={e => handleChange("hourlyRate", e.target.value)}
                   />
                   <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
-                    <small>Your chosen hourly wage.</small>
+                    <small>A fair hourly wage to give yourself based on your skill level creating this product.</small>
                   </HelperText>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const ProductEntry = () => {
         </div>
       </div>
 
-      <div className="flex justify-end pr-20 pt-10">
+      <div className="flex justify-end pr-20 pt-10 pb-15">
         <button
           onClick={handleNext}
           className="body-text text-4xl font-semibold button-colour rounded-3xl cursor-pointer h-[79px] text-white w-[185px]"
