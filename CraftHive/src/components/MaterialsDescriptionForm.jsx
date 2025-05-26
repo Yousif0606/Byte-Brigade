@@ -1,53 +1,73 @@
-import React from "react";
-import { MaterialInputPage } from "../helpers/PriceSuggestion.js";
-import {
-  Button,
-  Label,
-  Select,
-  Textarea,
-  TextInput,
-} from "flowbite-react";
-import "../App.css";
+"use client";
+import React, { useState, useContext } from "react";
+import { TextInput } from "flowbite-react";
+import { ProductContext } from "../context/ProductContext";
 
+const MaterialsDescriptionForm = () => {
+  const { productData, setProductData } = useContext(ProductContext);
 
-export default function MaterialsDescriptionForm() {
+  const [material, setMaterial] = useState({ name: "", cost: "" });
+  const [materialsList, setMaterialsList] = useState(productData.materials || []);
+
+  const handleChange = (e) => {
+    setMaterial({ ...material, [e.target.name]: e.target.value });
+  };
+
+  const addMaterial = () => {
+    if (!material.name || !material.cost) return;
+    const updated = [...materialsList, material];
+    setMaterialsList(updated);
+    setMaterial({ name: "", cost: "" });
+    setProductData({ ...productData, materials: updated });
+  };
+
   return (
-        <div className="w-full px-4 md:px-20">
-          <section className="p-6 md:p-10 mx-auto w-full rounded-2xl  shadow-[0_4px_6px_rgba(0,0,0,0.1)] purple-bg-textbox">
-            <h4 className="body-text font-bold px-10 pb-2 mb-8 text-3xl text-black max-md:text-lg max-sm:text-base">
+    <div className="w-full px-4 md:px-20">
+      <section className="p-6 md:p-10 mx-auto w-full rounded-2xl shadow-[0_4px_6px_rgba(0,0,0,0.1)] purple-bg-textbox">
+        <h4 className="body-text font-bold px-10 pb-2 mb-8 text-3xl text-black">
           Which materials go into making one instance of your product?
-          </h4>
+        </h4>
+        <h5 className="body-text font-light px-10 pb-4 mb-8 text-xl purple-text-dark">
+          Add the material and total cost (with tax) — like: <br />
+          <strong>"Forest green yarn (15ft bundle)" — $6.49</strong>
+        </h5>
 
-          <h5 className="body-text font-light px-10 pb-4 mb-8 text-xl purple-text-dark max-md:text-lg max-sm:text-base ">
-          <span className="font-bold">Give a short title or description of your materials then input the cost (including taxes) in the appropriate fields below.</span> <br/>
-          For example: "Forest Green yarn, 15ft bundle", $6.49.
-          </h5>
-
-            <form className="flex flex-col gap-5" >
-              {/* Form content with two columns */}
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-3 ">
-                {/* Material entries will go here */}
-                <div className="col-span-2 ml-9 h-12 offwhite-bg align-middle rounded-lg">
-                  <TextInput 
-                    id="material-1" 
-                    type="text" 
-                    placeholder="Material description..." 
-                    className="rounded-lg offwhite-bg border-none focus:ring-purple-400 align-middle px-3 py-4" 
-                  />
-                </div>
-                <div className="col-start-3 col-span-1 h-12 offwhite-bg align-middle rounded-lg">
-                  <TextInput 
-                    id="cost-1" 
-                    type="price" 
-                    placeholder="Total cost of this material..." 
-                    className="rounded-lg offwhite-bg border-none focus:ring-purple-400 align-middle px-3 py-4" 
-                  />
-                </div>
-              </div>
-              
-              {/* Add button will go here */}
-            </form>
-          </section>
+        <div className="grid grid-cols-3 gap-4 px-10">
+          <TextInput
+            name="name"
+            placeholder="Material description..."
+            value={material.name}
+            onChange={handleChange}
+          />
+          <TextInput
+            name="cost"
+            placeholder="Cost"
+            type="number"
+            value={material.cost}
+            onChange={handleChange}
+          />
+          <button
+            onClick={addMaterial}
+            className="body-text font-semibold button-colour text-white px-6 py-2 rounded-lg"
+          >
+            + Add Material
+          </button>
         </div>
+
+        {materialsList.length > 0 && (
+          <div className="px-10 pt-6">
+            <ul className="list-disc list-inside">
+              {materialsList.map((mat, index) => (
+                <li key={index}>
+                  {mat.name} — ${mat.cost}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+    </div>
   );
-}
+};
+
+export default MaterialsDescriptionForm;

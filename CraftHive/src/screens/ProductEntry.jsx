@@ -1,30 +1,29 @@
 "use client";
 import React, { useState, useContext } from "react";
 import { HelperText, TextInput } from "flowbite-react";
-import NavigationButtons from "../components/NavigationButtons";
 import { useNavigate } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 const ProductEntry = () => {
   const navigate = useNavigate();
-  const { setProduct } = useContext(ProductContext);
+  const { setProductData } = useContext(ProductContext);
 
-  const [data, setData] = useState({
+  const [form, setForm] = useState({
     name: "",
     description: "",
     creativeHours: "",
     adminHours: "",
     hourlyRate: "",
-    materials: []
+    materials: [], // This gets updated on next screen
   });
 
   const handleChange = (field, value) => {
-    setData(prev => ({ ...prev, [field]: value }));
+    setForm({ ...form, [field]: value });
   };
 
-  const handleSubmit = () => {
-    setProduct(data);
-    navigate("/pricing/suggested_price");
+  const handleNext = () => {
+    setProductData(form);
+    navigate("/pricing/material_input");
   };
 
   return (
@@ -36,28 +35,87 @@ const ProductEntry = () => {
       </div>
 
       <div className="w-full px-4 md:px-20">
-        <div className="p-6 md:p-10 mx-auto w-full rounded-2xl purple-bg-textbox">
+        <div className="p-6 md:p-10 mx-auto w-full rounded-2xl shadow-[0_4px_6px_rgba(0,0,0,0.1)] purple-bg-textbox">
           <h4 className="body-text font-bold px-10 pb-2 mb-8 text-3xl text-black">
             What new product are you creating?
           </h4>
+          <h5 className="body-text font-light px-10 pb-4 mb-8 text-xl purple-text-dark">
+            <span className="font-bold">Give a short title or description.</span><br />
+            Then enter time and wage details below.
+          </h5>
 
           <div className="max-w-6xl flex-grow flex flex-col body-text pb-20">
             <form className="flex flex-col gap-5">
               <div className="grid grid-cols-3 gap-4">
-                <TextInput placeholder="Product Name..." onChange={e => handleChange("name", e.target.value)} />
-                <TextInput placeholder="Short description..." onChange={e => handleChange("description", e.target.value)} />
+                <TextInput
+                  id="product-name-1"
+                  type="text"
+                  placeholder="Product Name..."
+                  className="rounded-lg offwhite-bg border-none focus:ring-purple-400 px-3 py-4"
+                  onChange={e => handleChange("name", e.target.value)}
+                />
+
+                <TextInput
+                  id="product-desc-1"
+                  type="text"
+                  placeholder="Short description..."
+                  className="rounded-lg offwhite-bg border-none focus:ring-purple-400 px-3 py-4"
+                  onChange={e => handleChange("description", e.target.value)}
+                />
               </div>
+
               <div className="grid grid-cols-3 gap-4">
-                <TextInput placeholder="Creative hours..." type="number" onChange={e => handleChange("creativeHours", e.target.value)} />
-                <TextInput placeholder="Admin hours..." type="number" onChange={e => handleChange("adminHours", e.target.value)} />
-                <TextInput placeholder="Hourly wage..." type="number" onChange={e => handleChange("hourlyRate", e.target.value)} />
+                <div>
+                  <TextInput
+                    id="creative-hours-1"
+                    type="number"
+                    placeholder="Creative hours..."
+                    className="rounded-lg offwhite-bg border-none focus:ring-purple-400 px-3 py-4"
+                    onChange={e => handleChange("creativeHours", e.target.value)}
+                  />
+                  <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
+                    <small>Hours spent crafting the product.</small>
+                  </HelperText>
+                </div>
+
+                <div>
+                  <TextInput
+                    id="admin-hours-1"
+                    type="number"
+                    placeholder="Admin hours..."
+                    className="rounded-lg offwhite-bg border-none focus:ring-purple-400 px-3 py-4"
+                    onChange={e => handleChange("adminHours", e.target.value)}
+                  />
+                  <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
+                    <small>Time spent on business tasks per item.</small>
+                  </HelperText>
+                </div>
+
+                <div>
+                  <TextInput
+                    id="hourly-wage-1"
+                    type="number"
+                    placeholder="Hourly wage..."
+                    className="rounded-lg offwhite-bg border-none focus:ring-purple-400 px-3 py-4"
+                    onChange={e => handleChange("hourlyRate", e.target.value)}
+                  />
+                  <HelperText className="purple-text-dark pt-2 opacity-70 leading-none">
+                    <small>Your chosen hourly wage.</small>
+                  </HelperText>
+                </div>
               </div>
             </form>
-            <button onClick={handleSubmit} className="mt-6 btn-primary">
-              Next
-            </button>
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-end pr-20 pt-10">
+        <button
+          onClick={handleNext}
+          className="body-text text-4xl font-semibold button-colour rounded-3xl cursor-pointer h-[79px] text-white w-[185px]"
+        >
+          Next
+        </button>
       </div>
     </section>
   );
